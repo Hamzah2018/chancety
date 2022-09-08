@@ -34,8 +34,12 @@ class OrderDataTable extends DataTable
                     ->setTableId('order-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->dom('Bfrtip')
+                    // ->dom('Bfrtip')
                     ->orderBy(1)
+                    ->parameters([
+                        'dom' => 'Blfrtip',
+                        'lengthMenu' =>[[5,10,15,20,-1],[5, 10,20,'All Record']]
+                    ])
                 ->buttons(
                         Button::make('create'),
                         Button::make('export'),
